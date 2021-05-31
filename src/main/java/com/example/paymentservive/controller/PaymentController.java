@@ -3,14 +3,19 @@ package com.example.paymentservive.controller;
 import com.example.paymentservive.entity.Payment;
 import com.example.paymentservive.service.PaymentService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/payment")
 public class PaymentController {
+
+
+    @GetMapping("/{message}")
+    public String getmessage( @PathVariable String message){
+
+        return "Message: "+message;
+
+    }
 
     @Autowired
     PaymentService paymentService;
